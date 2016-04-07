@@ -1,0 +1,101 @@
+<!-- 
+
+    S U P P O R T
+    - - - - - - -
+    
+    Web: ctrlq.org
+    
+    Coded By Anthony Nava
+
+    anthony@anthonynava.com
+    
+    
+    
+    
+    
+    
+    
+//Any of the headers below can be changed as well as the link data from h7    
+      
+-->
+
+
+
+<h1>Youth Policy Institute</h1>
+<h2>Subcontractor Audit - Documentation Submission Form</h2>
+<h3><b>Thai CDC - (04.01.15 - 03.31.16)</b></h3>
+
+<h4><b>Please upload requested documents using the form below</b></h4>
+
+
+<h5><b>Name the file as follows (File Name - Agency Name - Contract Year Ending)</b></h5>
+
+<h6>Example (Audited Financial Statements - Thai CDC - FYE 2015)</h6>
+
+<h7>Uploaded documents can be viewed by clicking the following link: <p><b><a href="https://goo.gl/RVbFjl" target="_blank">https://goo.gl/RVbFjl</a></b></p></h7>
+
+
+
+
+<form id="form">
+
+    <label>Name</label>
+    <input type="text" name="Name" placeholder="Name">
+    
+    <label>Email</label>
+    <input type="text" name="Email" placeholder="Email">
+    
+    <input type="file" name="myFile">
+    
+    <input type="submit" value="Upload File" 
+           onclick="this.value='Uploading..';
+                    google.script.run.withSuccessHandler(fileUploaded)
+                    .uploadFiles(this.parentNode);
+                    return false;">
+</form>
+
+<div id="output"></div>
+
+<script>
+    function fileUploaded(status) {
+        document.getElementById('form').style.display = 'none';
+        document.getElementById('output').innerHTML = status;
+    }
+</script>
+
+<style>
+
+ input { display:block; margin: 20px; }
+ 
+ body { background-color: #3399cc;
+      }
+ h1 { 
+      color: blue; font-size: 250%;
+      }
+ 
+ h2 {
+      font-size: 250%
+      }
+      
+ h3 {
+      font-size: 250%
+      }
+
+ h4 {
+      font-size: 150%
+      }
+      
+ h5 {
+      font-size: 150%
+      }
+
+ h6 {
+      font-size: 150%; color: blue;
+      }
+      
+ h7 {
+      font-size: 110%;
+      }
+
+
+</style>
