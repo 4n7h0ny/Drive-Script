@@ -11,7 +11,7 @@ function uploadFiles(form) {
     //also make sure that you run doGet from the server.gs before publishing as a webapp
     //I still cant figure out the email confirmation but working on it at the end of this script AN 03.31.16
     
-    var folder = DriveApp.getFolderById("0BzEb-00000000");
+    var folder = DriveApp.getFolderById("0BzEb-000000this is a test folder will not work");
     
     //Above is the folder ID, use the string in the folder link and update in quotes
     
