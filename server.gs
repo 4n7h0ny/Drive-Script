@@ -11,7 +11,7 @@ function uploadFiles(form) {
     //also make sure that you run doGet from the server.gs before publishing as a webapp
     //I still cant figure out the email confirmation but working on it at the end of this script AN 03.31.16
     
-    var folder = DriveApp.getFolderById("0BzEb-qCKXaZncl81R0VoUkRMWjg");
+    var folder = DriveApp.getFolderById("0BzEb-00000000");
     
     //Above is the folder ID, use the string in the folder link and update in quotes
     
@@ -39,7 +39,7 @@ function uploadFiles(form) {
   
   var Email = form.Email;
   
-  var message = "Dear " +Name +", \n\nThank you for your submission! You can view it here: " +Link + "\n\nAll best,\nAnthony Nava\Anthonyn@ypiusa.org";
+  var message = "Dear " +Name +", \n\nThank you for your submission! You can view it here: " +Link + "\n\nAll best,\nMy Name Here\nTest@email.com";
   MailApp.sendEmail(Email, "Audit Documentation Submission", message);
     
   }  
