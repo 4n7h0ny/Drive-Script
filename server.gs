@@ -1,4 +1,3 @@
-
 function doGet(e) {
   return HtmlService.createHtmlOutputFromFile('form.html');
 }
@@ -18,30 +17,20 @@ function uploadFiles(form) {
     var blob = form.myFile;    
     var file = folder.createFile(blob);    
     file.setDescription("Uploaded by " + form.myName);
+    
+    // Send email
+    var information = form.info;
+    var Link = file.getUrl();
+    var Name = form.Name;
+    var Email = form.Email;
+    
+    var message = "Dear " +Name +", \n\nThank you for your submission! You can view it here: " + Link + "\n\nAll best,\nMy Name Here\nTest@email.com";
+    MailApp.sendEmail(Email, "Name of Submission", message);
         
-    return "File uploaded successfully " + file.getUrl();
+    return "File uploaded successfully " + Link;
     
   } catch (error) {
     
     return error.toString();
   }
-  
-  {
-    // all of the data below is not working correctly, I am trying to pull info from the form but shit is not working!
-    
-    //I think that the info below is not referenceing the form info correctly because I am not getting any errors and the file is uploading to the drive correctly, tried everything no luck, get help
-    
-  var information = form.info;
-  
-  var Link = file.geturl();
-  
-  var Name = form.Name;
-  
-  var Email = form.Email;
-  
-  var message = "Dear " +Name +", \n\nThank you for your submission! You can view it here: " +Link + "\n\nAll best,\nMy Name Here\nTest@email.com";
-  MailApp.sendEmail(Email, "Name of Submission", message);
-    
-  }  
-  
 }
