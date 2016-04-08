@@ -40,7 +40,7 @@ function uploadFiles(form) {
   var Email = form.Email;
   
   var message = "Dear " +Name +", \n\nThank you for your submission! You can view it here: " +Link + "\n\nAll best,\nMy Name Here\nTest@email.com";
-  MailApp.sendEmail(Email, "Audit Documentation Submission", message);
+  MailApp.sendEmail(Email, "Name of Submission", message);
     
   }  
   
